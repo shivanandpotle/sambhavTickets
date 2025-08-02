@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Registration - Sambhav Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+<body>
+    <div class="form-container">
+        <div class="form-wrapper">
+            <div class="form-header">
+                <a href="/"><img src="images/sambhav_logoblack.png" alt="Logo" class="form-logo" onerror="this.onerror=null;this.src='https://placehold.co/150x50/000000/ffffff?text=Sambhav';"></a>
+                <h2>Event Registration</h2>
+                <p>Secure your spot for our next great event.</p>
+            </div>
+
+            <form id="bookingForm">
+                <div class="form-step">
+                    <h3>1. Select Your Event</h3>
+                    <div class="input-group">
+                        <label for="event">Select Event</label>
+                        <select id="event" required>
+                            <option value="">-- Please select an event --</option>
+                            <option value="InspireX">InspireX (₹500)</option>
+                            <!-- <option value="Aarambh">Aarambh (₹250)</option>
+                            <option value="SAHARA - Donation Drive">SAHARA - Donation Drive (Free)</option>
+                            <option value="Udaan">Udaan (₹150)</option>
+                            <option value="Pravaah">Pravaah (Free)</option> -->
+                        </select>
+                    </div>
+                    <div class="input-group">
+                        <label for="quantity">How many tickets do you need?</label>
+                        <select id="quantity" required>
+                            <option value="1">1 Ticket</option>
+                            <option value="3">3 Tickets (10% Off)</option>
+                            <option value="5">5 Tickets (15% Off)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-step" id="attendees-section">
+                    <h3>2. Attendee Details</h3>
+                    <p class="form-step-description">Please enter the full details for all attendees. Each person will receive their own unique ticket.</p>
+                    <div id="attendees-container"></div>
+                </div>
+
+                <div class="form-step">
+                    <h3>3. Purchaser Information</h3>
+                     <div class="input-group">
+                        <label for="purchaser_email">Your Email (for receipt)</label>
+                        <input type="email" id="purchaser_email" required>
+                    </div>
+                     <div class="input-group">
+                        <label for="purchaser_phone">Your Mobile Number</label>
+                        <input type="tel" id="purchaser_phone" required>
+                    </div>
+                    <div class="input-group">
+                        <label>Are you from JSPM RSCOE? (This applies to all attendees)</label>
+                        <div class="radio-group">
+                            <label><input type="radio" name="is_student" value="yes"> Yes</label>
+                            <label><input type="radio" name="is_student" value="no" checked> No</label>
+                        </div>
+                    </div>
+                    <div class="input-group" id="prn-container" style="display: none;">
+                        <label for="prn_number">PRN Number (Primary Attendee)</label>
+                        <input type="text" id="prn_number">
+                    </div>
+                </div>
+
+                <div id="price-summary" class="price-summary" style="display: none;"></div>
+                <div id="form-message" class="form-message" style="display: none;"></div>
+                <button type="submit" class="primary-btn form-btn" id="submitBtn">Proceed</button>
+            </form>
+             <div class="form-footer">
+                <a href="/">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+    <script src="js/register.js"></script>
+</body>
+</html>

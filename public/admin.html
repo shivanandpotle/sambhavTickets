@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel - Sambhav Club</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="admin-body">
+
+    <header class="admin-header">
+        <h1>Admin Panel</h1>
+        <a href="/api/logout" class="secondary-btn logout-btn">Logout</a>
+    </header>
+
+    <main class="admin-main-container">
+        <section class="admin-section">
+            <h2><i class="fas fa-qrcode"></i> Ticket Scanner</h2>
+            <div class="scanner-container">
+                <div id="qr-reader"></div>
+                <div id="qr-scan-result">Scan a ticket's QR code to validate.</div>
+            </div>
+        </section>
+
+        <section class="admin-section">
+            <h2><i class="fas fa-ticket-alt"></i> Confirmed Bookings</h2>
+            <div class="table-wrapper">
+                <table id="bookingTable">
+                    <thead>
+                        <tr>
+                            <th>Status</th>
+                            <th>Attendees</th>
+                            <th>Event</th>
+                            <th>Contact</th>
+                            <th>Student (PRN)</th>
+                            <th>Ticket ID</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        </tbody>
+                </table>
+            </div>
+            <div id="loading" class="spinner-container" style="display: none;">
+                <div class="spinner"></div>
+            </div>
+            <div id="error" class="error-message" style="display: none;"></div>
+        </section>
+    </main>
+
+    <script src="https://unpkg.com/html5-qrcode/html5-qrcode.min.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
